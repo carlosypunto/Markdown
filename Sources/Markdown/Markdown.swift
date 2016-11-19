@@ -21,7 +21,7 @@
 
 import CDiscount
 
-private typealias PMMIOT = UnsafeMutablePointer<Void>
+private typealias PMMIOT = UnsafeMutableRawPointer
 private typealias MKDFUN = (PMMIOT, UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>) -> Int32
 
 public class Markdown {
@@ -31,7 +31,7 @@ public class Markdown {
         self._markdown = markdown
         let result = mkd_compile(markdown, options.rawValue)
         if result <= 0 {
-            throw Error.Compile(code: result)
+            throw MarkdownError.Compile(code: result)
         }
     }
     
@@ -44,7 +44,7 @@ public class Markdown {
     }
     
     private func data(with fun:MKDFUN, deallocator:(UnsafeMutablePointer<Int8>?)->Void) throws -> String {
-        var dest = [UnsafeMutablePointer<Int8>?](repeating: UnsafeMutablePointer<Int8>(allocatingCapacity: 1), count: 1)
+        var dest = [UnsafeMutablePointer<Int8>?](repeating: UnsafeMutablePointer<Int8>.allocate(capacity: 1), count: 1)
         
         let result = fun(_markdown, &dest)
         defer {
@@ -53,7 +53,7 @@ public class Markdown {
             }
         }
         if result < 0 {
-            throw Error.Produce(code: result)
+            throw MarkdownError.Produce(code: result)
         }
         
         guard let data = dest[0] else {

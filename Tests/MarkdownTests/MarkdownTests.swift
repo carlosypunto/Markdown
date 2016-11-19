@@ -88,7 +88,7 @@ class MarkdownTests: XCTestCase {
     // no dispatch
     func testStress() {
         let id = UUID().uuidString
-        let queue = DispatchQueue(label: id, attributes: DispatchQueueAttributes.concurrent)
+        let queue = DispatchQueue(label: id, attributes: .concurrent)
         
         for i in 0...10000 {
             let expectation = self.expectation(description: "OK " + String(i))
@@ -113,9 +113,9 @@ class MarkdownTests: XCTestCase {
 }
 
 #if os(Linux)
-extension MarkdownTests : XCTestCaseProvider {
-	var allTests : [(String, () throws -> Void)] {
-        var tests:[(String, () throws -> Void)] = [
+extension MarkdownTests {
+	static var allTests : [(String, (MarkdownTests) -> () throws -> Void)] {
+        var tests:[(String, (MarkdownTests) -> () throws -> Void)] = [
 			("testHeader", testHeader),
 			("testBody", testBody),
 			("testTableOfContents", testTableOfContents),
@@ -123,7 +123,7 @@ extension MarkdownTests : XCTestCaseProvider {
 		]
         
         #if dispatch
-        tests.append(("testStress", testStress))
+            tests.append(("testStress", testStress))
         #endif
         
         return tests

@@ -1,7 +1,9 @@
 import XCTest
 
-@testable import Markdowntest
+import MarkdownTests
 
-XCTMain([
-	MarkdownTests(),
-])
+var tests = [XCTestCaseEntry]()
+
+tests += MarkdownTests.allTests()
+
+XCTMain(tests)
