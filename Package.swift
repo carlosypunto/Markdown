@@ -24,6 +24,6 @@ import PackageDescription
 let package = Package(
     name: "Markdown",
     dependencies: [
-    .Package(url: "https://github.com/crossroadlabs/CDiscount.git", majorVersion: 2, minor: 2)
+        .Package(url: "https://github.com/crossroadlabs/CDiscount.git", majorVersion: 2, minor: 2)
     ]
 )
