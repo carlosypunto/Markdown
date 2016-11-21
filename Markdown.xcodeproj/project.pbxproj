@@ -125,7 +125,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65285FF81C86028700A67889 /* Build configuration list for PBXNativeTarget "Markdown" */;
 			buildPhases = (
-				965FCFE41C872299006E84C5 /* Check Carthage Checkouts direcotry */,
+				965FCFE41C872299006E84C5 /* Check Carthage Checkouts directory */,
 				65285FDF1C86028600A67889 /* Sources */,
 				65285FE01C86028600A67889 /* Frameworks */,
 				65285FE11C86028600A67889 /* Headers */,
@@ -212,14 +212,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		965FCFE41C872299006E84C5 /* Check Carthage Checkouts direcotry */ = {
+		965FCFE41C872299006E84C5 /* Check Carthage Checkouts directory */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Carthage Checkouts direcotry";
+			name = "Check Carthage Checkouts directory";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -105,7 +105,7 @@ class MarkdownTests: XCTestCase {
             }
         }
         
-        self.waitForExpectations(timeout: 30, handler: nil)
+        self.waitForExpectations(timeout: 60, handler: nil)
     }
     
     #endif
