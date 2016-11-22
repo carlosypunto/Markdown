@@ -23,11 +23,7 @@ import PackageDescription
 
 let package = Package(
     name: "Markdown",
-    targets: [
-        Target(
-            name: "Markdown"
-        ),
-    ],
-    dependencies: [.Package(url: "https://github.com/crossroadlabs/CDiscount.git", majorVersion: 0)],
-    exclude: ["Carthage"]
+    dependencies: [
+        .Package(url: "https://github.com/crossroadlabs/CDiscount.git", majorVersion: 2, minor: 2)
+    ]
 )

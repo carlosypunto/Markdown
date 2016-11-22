@@ -19,7 +19,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-public enum Error : ErrorProtocol {
+public enum MarkdownError : Error {
     case Compile(code:Int32)
     case Produce(code:Int32)
 }

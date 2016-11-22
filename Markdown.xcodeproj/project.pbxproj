@@ -57,8 +57,8 @@
 		65285FDA1C86028600A67889 = {
 			isa = PBXGroup;
 			children = (
-				65285FE61C86028600A67889 /* Markdown */,
-				65285FF21C86028700A67889 /* MarkdownTests */,
+				920A20891DE1011000743624 /* Sources */,
+				920A208A1DE1013300743624 /* Tests */,
 				65285FE51C86028600A67889 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,8 +89,23 @@
 				65285FF31C86028700A67889 /* MarkdownTests.swift */,
 				65285FF51C86028700A67889 /* Info.plist */,
 			);
-			name = MarkdownTests;
-			path = Tests/Markdown;
+			path = MarkdownTests;
+			sourceTree = "<group>";
+		};
+		920A20891DE1011000743624 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				65285FE61C86028600A67889 /* Markdown */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		920A208A1DE1013300743624 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				65285FF21C86028700A67889 /* MarkdownTests */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,7 +125,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65285FF81C86028700A67889 /* Build configuration list for PBXNativeTarget "Markdown" */;
 			buildPhases = (
-				965FCFE41C872299006E84C5 /* Check Carthage Checkouts direcotry */,
+				965FCFE41C872299006E84C5 /* Check Carthage Checkouts directory */,
 				65285FDF1C86028600A67889 /* Sources */,
 				65285FE01C86028600A67889 /* Frameworks */,
 				65285FE11C86028600A67889 /* Headers */,
@@ -150,7 +165,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Crossroad Labs, LTD.";
 				TargetAttributes = {
 					65285FE31C86028600A67889 = {
@@ -197,14 +212,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		965FCFE41C872299006E84C5 /* Check Carthage Checkouts direcotry */ = {
+		965FCFE41C872299006E84C5 /* Check Carthage Checkouts directory */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Carthage Checkouts direcotry";
+			name = "Check Carthage Checkouts directory";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +271,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -306,8 +323,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -329,6 +348,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -345,7 +365,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Markdown/Info.plist;
+				INFOPLIST_FILE = Sources/Markdown/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Markdown;
@@ -366,7 +386,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Markdown/Info.plist;
+				INFOPLIST_FILE = Sources/Markdown/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Markdown;
@@ -380,7 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Markdown/Info.plist;
+				INFOPLIST_FILE = Tests/MarkdownTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.MarkdownTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -391,7 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Markdown/Info.plist;
+				INFOPLIST_FILE = Tests/MarkdownTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.MarkdownTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
